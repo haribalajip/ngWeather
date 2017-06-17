@@ -19,7 +19,7 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
+      /*.when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
@@ -31,5 +31,22 @@ angular
       })
       .otherwise({
         redirectTo: '/'
-      });
+      });*/
+      .when('/',{
+      templateUrl:"views/home.html",
+      controller:"homeController"
+      })
+      .when('/forecast',{
+      templateUrl:"views/forecast.html",
+      controller:"forecastController"
+
+      })
+      .when('/forecast/:num',{
+      templateUrl:"views/forecast.html",
+      controller:"forecastController"
+      })
+      .when('/home',{
+      templateUrl:"views/home.html",
+      controller:"homeController"
+      })
   });
