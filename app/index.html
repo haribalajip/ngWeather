@@ -1,9 +1,10 @@
 <!doctype html>
-<html>
+<html ng-app="ngWeatherApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Forecast Weather</title>
     <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
@@ -15,7 +16,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="ngWeatherApp">
+  <body>
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -38,7 +39,7 @@
     </header>
 
     <div class="container">
-    <div ng-view=""></div>
+      <div ng-view></div>
     </div>
 
 <!--     <div class="footer">

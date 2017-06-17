@@ -17,7 +17,7 @@ var weatherApp = angular
     'ngSanitize',
     'ngTouch'
   ]);
-weatherApp.config(function ($routeProvider) {
+weatherApp.config(function ($routeProvider,$locationProvider) {
   $routeProvider
     /*.when('/', {
       templateUrl: 'views/main.html',
@@ -49,7 +49,13 @@ weatherApp.config(function ($routeProvider) {
     templateUrl:"views/home.html",
     controller:"homeController"
     })
+    
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+    });
 });
+
 
 //services
 weatherApp.service('forecastService',function(){
