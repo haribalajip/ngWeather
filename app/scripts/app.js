@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular
+var weatherApp = angular
   .module('ngWeatherApp', [
     'ngAnimate',
     'ngCookies',
