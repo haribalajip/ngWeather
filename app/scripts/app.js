@@ -16,40 +16,40 @@ var weatherApp = angular
     'ngRoute',
     'ngSanitize',
     'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      /*.when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });*/
-      .when('/',{
-      templateUrl:"views/home.html",
-      controller:"homeController"
-      })
-      .when('/forecast',{
-      templateUrl:"views/forecast.html",
-      controller:"forecastController"
+  ]);
+weatherApp.config(function ($routeProvider) {
+  $routeProvider
+    /*.when('/', {
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl',
+      controllerAs: 'main'
+    })
+    .when('/about', {
+      templateUrl: 'views/about.html',
+      controller: 'AboutCtrl',
+      controllerAs: 'about'
+    })
+    .otherwise({
+      redirectTo: '/'
+    });*/
+    .when('/',{
+    templateUrl:"views/home.html",
+    controller:"homeController"
+    })
+    .when('/forecast',{
+    templateUrl:"views/forecast.html",
+    controller:"forecastController"
 
-      })
-      .when('/forecast/:num',{
-      templateUrl:"views/forecast.html",
-      controller:"forecastController"
-      })
-      .when('/home',{
-      templateUrl:"views/home.html",
-      controller:"homeController"
-      })
-  });
+    })
+    .when('/forecast/:num',{
+    templateUrl:"views/forecast.html",
+    controller:"forecastController"
+    })
+    .when('/home',{
+    templateUrl:"views/home.html",
+    controller:"homeController"
+    })
+});
 
 //services
 weatherApp.service('forecastService',function(){
@@ -65,20 +65,28 @@ weatherApp.controller('homeController',['$scope','forecastService',function($sco
 }]);
 
 weatherApp.controller("forecastController",['$scope','$resource','$routeParams','forecastService',function($scope,$resource,$routeParams,forecastService){
-$scope.city=forecastService.city;
-this.appid="4fd4dd83b901576fbcde60961152fdd2";    
-$scope.days=$routeParams.num||2;
-    
-    $scope.convertToDate = function(dt) { 
+  alert('forecast');
+  $scope.city=forecastService.city;
+  this.appid="4fd4dd83b901576fbcde60961152fdd2";    
+  $scope.days=$routeParams.num||2;
       
-        return new Date(dt * 1000);
+      $scope.convertToDate = function(dt) { 
         
-    };    
-    $scope.convertToCelsius=function(temp){
-        return Math.round(temp-273);
-    }
-$scope.weatherAPI=$resource("http://api.openweathermap.org/data/2.5/forecast/daily?");
-$scope.weatherResult=$scope.weatherAPI.get({q:$scope.city,cnt:$scope.days,appid:this.appid});
-    console.log($scope.weatherResult);
+          return new Date(dt * 1000);
+          
+      };    
+      $scope.convertToCelsius=function(temp){
+          return Math.round(temp-273);
+      }
+  $scope.weatherAPI=$resource("http://api.openweathermap.org/data/2.5/forecast/daily?");
+  $scope.weatherResult=$scope.weatherAPI.get({q:$scope.city,cnt:$scope.days,appid:this.appid});
+      console.log($scope.weatherResult);
 }]);
 
+//Directives
+weatherApp.directive('weatherReport',function(){
+return {
+    templateUrl:"directives/weatherReport.html",
+   
+       }
+});
