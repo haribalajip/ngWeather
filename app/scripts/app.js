@@ -19,19 +19,7 @@ var weatherApp = angular
   ]);
 weatherApp.config(function ($routeProvider,$locationProvider) {
   $routeProvider
-    /*.when('/', {
-      templateUrl: 'views/main.html',
-      controller: 'MainCtrl',
-      controllerAs: 'main'
-    })
-    .when('/about', {
-      templateUrl: 'views/about.html',
-      controller: 'AboutCtrl',
-      controllerAs: 'about'
-    })
-    .otherwise({
-      redirectTo: '/'
-    });*/
+  
     .when('/',{
     templateUrl:"views/home.html",
     controller:"homeController"
@@ -56,7 +44,7 @@ weatherApp.config(function ($routeProvider,$locationProvider) {
 
 //services
 weatherApp.service('forecastService',function(){
-this.city="bangalore";
+  this.city="bangalore";
 })
 
 //controller
@@ -82,13 +70,13 @@ weatherApp.controller("forecastController",['$scope','$resource','$routeParams',
       }
   $scope.weatherAPI=$resource("http://api.openweathermap.org/data/2.5/forecast/daily?");
   $scope.weatherResult=$scope.weatherAPI.get({q:$scope.city,cnt:$scope.days,appid:this.appid});
-      console.log($scope.weatherResult);
+  console.log($scope.weatherResult);
 }]);
 
 //Directives
 weatherApp.directive('weatherReport',function(){
-return {
+  return {
     templateUrl:"views/weatherReport.html",
-   
-       }
+
+  }
 });
