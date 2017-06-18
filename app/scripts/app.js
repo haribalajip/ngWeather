@@ -89,7 +89,7 @@ weatherApp.controller("forecastController",['$scope','$resource','$routeParams',
 //Directives
 weatherApp.directive('weatherReport',function(){
 return {
-    templateUrl:"directives/weatherReport.html",
+    templateUrl:"views/weatherReport.html",
    
        }
 });
