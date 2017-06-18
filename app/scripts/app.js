@@ -68,7 +68,6 @@ weatherApp.controller('homeController',['$scope','forecastService',function($sco
 }]);
 
 weatherApp.controller("forecastController",['$scope','$resource','$routeParams','forecastService',function($scope,$resource,$routeParams,forecastService){
-  alert('forecast');
   $scope.city=forecastService.city;
   this.appid="4fd4dd83b901576fbcde60961152fdd2";    
   $scope.days=$routeParams.num||2;
