@@ -36,7 +36,7 @@ weatherApp.config(function ($routeProvider,$locationProvider) {
     templateUrl:"views/home.html",
     controller:"homeController"
     })
-    .when('/forecast',{
+    .when('!/forecast',{
     templateUrl:"views/forecast.html",
     controller:"forecastController"
 
@@ -50,10 +50,7 @@ weatherApp.config(function ($routeProvider,$locationProvider) {
     controller:"homeController"
     })
     
-    $locationProvider.html5Mode({
-      enabled: true,
-      requireBase: false
-    });
+    $locationProvider.html5Mode(false).hashPrefix('');
 });
 
 
