@@ -44,7 +44,7 @@ weatherApp.config(function ($routeProvider,$locationProvider) {
 
 //services
 weatherApp.service('forecastService',function(){
-  this.city="bangalore";
+  this.city="Chennai";
 })
 
 //controller
