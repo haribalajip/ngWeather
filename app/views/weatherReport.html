@@ -3,6 +3,6 @@
     {{convertToDate(w.dt)|date}}
   </a>
   
-  <a href="#" class="list-group-item">temperature:{{convertToCelsius(w.temp.night)}}C</a>
+  <a href="#" class="list-group-item">temperature:{{convertToCelsius(w.temp.max)}}C <span class="badge">{{w.weather[0].description}}</span></a>
   
 </div>
