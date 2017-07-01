@@ -1,8 +1,11 @@
 <div class="list-group" ng-repeat="w in weatherResult.list">
   <a href="#" class="list-group-item disabled">
-    {{convertToDate(w.dt)|date}}
+    {{convertToDate(w.dt)|date}} 
+    <span class="badge">{{w.weather[0].description}}</a>
   </a>
   
-  <a href="#" class="list-group-item">temperature:{{convertToCelsius(w.temp.max)}}C <span class="badge">{{w.weather[0].description}}</span></a>
+  <a href="#" class="list-group-item">Feels like {{convertToCelsius(w.temp.max)}}
+  <i class="wi wi-degrees" ></i>C 
+  <i ng-class="w.iconClass" ></i>
   
 </div>
