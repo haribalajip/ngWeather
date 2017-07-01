@@ -110,7 +110,7 @@ weatherApp.controller("forecastController",['$scope','$resource','$routeParams',
       console.log(newValue);
       if(newValue) {
         console.log($scope.weatherResult.list);
-        $scope.weatherResult.list.map((item,index)=>{
+        $scope.weatherResult.list.map(function(item,index){
           $scope.weatherResult.list[index]['iconClass']  = iconService.fn(item.weather[0].id);        
           console.log(item.weather[0].id)  ;
         });
