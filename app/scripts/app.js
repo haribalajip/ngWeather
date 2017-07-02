@@ -50,29 +50,37 @@ weatherApp.service('forecastService',function(){
 weatherApp.factory('iconService',function(){
   return {
     fn:function(id){
-      if(id>=200 && id<=232)
+      if(id>=200 && id<=232){
         this.iconClass = 'wi wi-thunderstorm';
+      }
       
-      if(id>=300 && id<=321)
+      if(id>=300 && id<=321){
         this.iconClass = 'wi wi-sprinkle';
+      }
       
-      if (id>=500 && id<=531) 
+      if (id>=500 && id<=531) {
         this.iconClass = 'wi wi-rain';
+      }
       
-      if (id>=600 && id<=22) 
+      if (id>=600 && id<=22) {
         this.iconClass = 'wi wi-snow';
+      }
       
-      if (id>=700 && id<=781) 
+      if (id>=700 && id<=781) {
         this.iconClass = 'wi wi-windy';
+      }
       
-      if (id== 800) 
+      if (id== 800) {
         this.iconClass = 'wi wi-day-sunny';
+      }
       
-      if (id>=801 && id<=804) 
+      if (id>=801 && id<=804) {
         this.iconClass = 'wi wi-cloudy';
+      }
       
-      if (id>=900 && id<=960) 
+      if (id>=900 && id<=960) {
         this.iconClass = 'wi wi-tornado';
+      }
       
       return this.iconClass;
     }
